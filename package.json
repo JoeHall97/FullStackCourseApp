@@ -1,0 +1,18 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "A website for sending out emails to a list of clients.",
+  "main": "index.js",
+  "engines": {
+    "node": "12.18.3",
+    "npm": "6.14.3"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Joseph Hall",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
