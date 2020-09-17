@@ -1,4 +1,4 @@
 # npm modules
 node_modules
-# api keys
-keys.js
+# developer api keys
+dev.js
