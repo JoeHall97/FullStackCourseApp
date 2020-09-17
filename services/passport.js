@@ -20,7 +20,8 @@ passport.use(new GoogleStrategy(
     {
         clientID: keys.googleClientID,
         clientSecret: keys.googleClientSecret,
-        callbackURL: '/auth/google/callback' //the route the user is redirected to when they give permission
+        callbackURL: '/auth/google/callback',
+        proxy: true // stops GoogleStrategy from disabling https, which breaks google oauth callback
     }, (accessToken, refreshToken, profile, done) => {
         User.findOne({ googleID: profile.id })  // NOTE: function is async
             .then((exisitingUser) => {
