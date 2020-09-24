@@ -22,8 +22,19 @@ passport.use(new GoogleStrategy(
         clientSecret: keys.googleClientSecret,
         callbackURL: '/auth/google/callback',
         proxy: true // stops GoogleStrategy from disabling https, which breaks google oauth callback
-    }, (accessToken, refreshToken, profile, done) => {
-        User.findOne({ googleID: profile.id })  // NOTE: function is async
+    }, 
+    async (accessToken, refreshToken, profile, done) => { //async/await solution for  versions >= ES2017
+        const exisitingUser =  await User.findOne({ googleID: profile.id });
+        if (exisitingUser) {
+            // user already in DB
+            return done(null, exisitingUser);
+        }
+        // new user, add them to the DB
+        const user = await new User ({ googleID: profile.id }).save()
+        done(null, user);    
+    }
+    /*(accessToken, refreshToken, profile, done) => { //promise solution for  versions < ES2017
+        User.findOne({ googleID: profile.id })  
             .then((exisitingUser) => {
                 if (exisitingUser) {
                     // user already in DB
@@ -37,5 +48,5 @@ passport.use(new GoogleStrategy(
                         .then(user => done(null, user));
                 }
             });
-    }
+    }*/
 ));
