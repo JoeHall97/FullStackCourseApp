@@ -6,7 +6,7 @@ import * as actions from "../actions";
 import { Dashboard } from "./Dashboard";
 import Header from "./Header";
 import { Landing } from "./Landing";
-import { SurveyNew } from "./surveys/SurveyNew";
+import SurveyNew from "./surveys/SurveyNew";
 
 interface AppProps {
 	fetchUser: Function;
@@ -19,11 +19,11 @@ function App(props: AppProps) {
 
 	return (
 		<BrowserRouter>
-			<div className='container'>
+			<div className="container">
 				<Header />
-				<Route exact={true} path='/' component={Landing} />
-				<Route exact={true} path='/surveys' component={Dashboard} />
-				<Route exact={true} path='/surveys/new' component={SurveyNew} />
+				<Route exact={true} path="/" component={Landing} />
+				<Route exact={true} path="/surveys" component={Dashboard} />
+				<Route exact={true} path="/surveys/new" component={SurveyNew} />
 			</div>
 		</BrowserRouter>
 	);
