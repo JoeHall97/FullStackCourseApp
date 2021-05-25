@@ -2,7 +2,6 @@ import { FetchUserAction } from "./fetchUsers";
 
 export enum FetchType {
 	fetchUser,
-	fetchTokens,
 	fetchSurvey,
 }
 
