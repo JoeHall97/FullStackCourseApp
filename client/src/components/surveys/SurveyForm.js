@@ -1,30 +1,30 @@
 import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
 import { Link } from "react-router-dom";
+import { ArrowRight } from "react-bootstrap-icons";
 import _ from "lodash";
 import SurveyField from "./SurveyField";
 import validateEmails from "../../utils/validateEmails";
-import formFields from './formFields';
-
+import formFields from "./formFields";
 
 class SurveyForm extends Component {
 	renderFields() {
 		return _.map(formFields, ({ label, name }) => {
-			return <Field key={name} component={SurveyField} type="text" label={label} name={name} />;
+			return <Field key={name} component={SurveyField} type='text' label={label} name={name} />;
 		});
 	}
 
 	render() {
 		return (
 			<div>
-				<form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
+				<form className='pt-4' onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
 					{this.renderFields()}
-					<Link to="/surveys" className="red btn-flat white-text">
+					<Link to='/surveys' className='btn btn-danger'>
 						Cancel
 					</Link>
-					<button type="submit" className="teal btn-flat right white-text">
+					<button type='submit' className='btn btn-primary float-end'>
 						Next
-						<i className="material-icons right">done</i>
+						<ArrowRight />
 					</button>
 				</form>
 			</div>
@@ -49,5 +49,5 @@ function validate(values) {
 export default reduxForm({
 	validate,
 	form: "surveyForm",
-	destroyOnUnmount: false
+	destroyOnUnmount: false,
 })(SurveyForm);
