@@ -1,0 +1,5 @@
+p {
+	margin: auto;
+	font-size: 1.25rem;
+	width: clamp(15ch, 50%, 80ch);
+}

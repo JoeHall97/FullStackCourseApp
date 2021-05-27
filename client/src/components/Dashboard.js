@@ -8,7 +8,7 @@ const Dashboard = () => {
 		<div>
 			<SurveyList />
 			<div>
-				<Link to='/surveys/new' className='btn float-end float-bottom'>
+				<Link to='/surveys/new' className='btn mt-4 float-end float-bottom' style={{ paddingRight: "10%" }}>
 					{/* <i className='medium material-icons'>add</i> */}
 					<PlusCircle size={40} />
 				</Link>
