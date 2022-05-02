@@ -1,6 +1,6 @@
 # Emaily, a website for sending user surveys
 
-A website built with NodeJs and ReactJS that allows for surveys to be created, emailed out, and the responses collected. This was built as part of a [Udemy course](https://www.udemy.com/course/node-with-react-fullstack-web-development/), and is [hosted over at Heroku](https://emaily-test-project-joehall.herokuapp.com/)
+A website built with NodeJs and ReactJS that allows for surveys to be created, emailed out, and the responses collected. This was built as part of a [Udemy course](https://www.udemy.com/course/node-with-react-fullstack-web-development/).
 
 ## Set up
 
